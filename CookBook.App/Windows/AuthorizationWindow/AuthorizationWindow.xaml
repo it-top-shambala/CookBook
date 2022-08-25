@@ -5,9 +5,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:CookBook.App.Windows.AuthorizationWindow"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="AuthorizationWindow" Height="550" Width="500">
+
+    <Window.Resources>
+        <ResourceDictionary Source="AuthorizationWindowStyles.xaml"/>
+    </Window.Resources>
+
+    <StackPanel>
+        <Label x:Name="Title"
+               Content="Авторизация"/>
+
+        <StackPanel>
+            <StackPanel>
+                <Label x:Name="LabelLogin"
+                       Content="Имя пользователя"/>
+                <TextBox x:Name="InputLogin"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Label x:Name="LabelPassword"
+                       Content="Имя пользователя"/>
+                <PasswordBox x:Name="InputPassword"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Button x:Name="ButtonClear"
+                        Content="Очистить"/>
+                <Button x:Name="ButtonLogin"
+                        Content="Войти"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
 </Window>
 
