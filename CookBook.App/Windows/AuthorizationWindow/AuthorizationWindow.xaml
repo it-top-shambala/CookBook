@@ -35,12 +35,42 @@
             <DockPanel Style="{StaticResource StyleDockPanel}">
                 <Button x:Name="ButtonClear"
                         DockPanel.Dock="Left"
-                        Content="Очистить"
-                        Style="{StaticResource StyleButtonClear}" />
+                        Content="Очистить">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Button}"
+                               BasedOn="{StaticResource StyleButtonClear}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=InputLogin, Path=Text}" Value="">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=InputPassword, Path=Password}" Value="">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
                 <Button x:Name="ButtonLogin"
                         DockPanel.Dock="Right"
-                        Content="Войти"
-                        Style="{StaticResource StyleButtonLogin}" />
+                        Content="Войти">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Button}"
+                               BasedOn="{StaticResource StyleButtonLogin}">
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding ElementName=InputPassword, Path=Password}" Value="" />
+                                        <Condition Binding="{Binding ElementName=InputLogin, Path=Text}" Value="" />
+                                    </MultiDataTrigger.Conditions>
+                                    <MultiDataTrigger.Setters>
+                                        <Setter Property="IsEnabled" Value="False" />
+                                    </MultiDataTrigger.Setters>
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </DockPanel>
         </StackPanel>
     </StackPanel>

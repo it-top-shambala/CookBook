@@ -8,10 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Icons\Apple.png"/>
-    <Resource Include="Icons\Apple.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <None Remove="Icons\Apple.png" />
   </ItemGroup>
 
 </Project>
