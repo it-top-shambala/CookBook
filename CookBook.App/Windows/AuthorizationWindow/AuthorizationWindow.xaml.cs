@@ -23,7 +23,7 @@ public partial class AuthorizationWindow : Window
         if (login == "login" && password == "123")
         {
             MessageBox.Show("Вы успешно авторизовались!");
-            new MainWindow().Show();
+            new MainWindow.MainWindow().Show();
             this.Close();
         }
         else
