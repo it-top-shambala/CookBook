@@ -3,76 +3,52 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="550" Width="500">
-
-    <Window.Resources>
-        <ResourceDictionary Source="AuthorizationWindowStyles.xaml" />
-    </Window.Resources>
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        Title="AuthorizationWindow" Height="350" Width="500">
 
     <StackPanel>
-        <Label x:Name="Title"
-               Content="Авторизация"
-               Style="{StaticResource StyleTitle}" />
+        <TextBlock x:Name="Title"
+               Text="Авторизация"
+               HorizontalAlignment="Center"
+               Style="{StaticResource MaterialDesignHeadline3TextBlock}" />
 
-        <StackPanel Style="{StaticResource StyleStackPanelVertical}">
-            <StackPanel Style="{StaticResource StyleStackPanelHorizontal}">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
                 <Label x:Name="LabelLogin"
                        Content="Имя пользователя"
-                       Style="{StaticResource StyleInputLabel}" />
+                       Width="150"
+                       Style="{StaticResource MaterialDesignLabel}" />
                 <TextBox x:Name="InputLogin"
-                         Style="{StaticResource StyleInput}" />
+                         Width="300"
+                         Style="{StaticResource MaterialDesignTextBox}" />
             </StackPanel>
 
-            <StackPanel Style="{StaticResource StyleStackPanelHorizontal}">
+            <StackPanel Orientation="Horizontal">
                 <Label x:Name="LabelPassword"
                        Content="Пароль"
-                       Style="{StaticResource StyleInputLabel}" />
-                <TextBox x:Name="InputPassword"
-                         Style="{StaticResource StyleInput}"/>
-                <!--<PasswordBox x:Name="InputPassword"
-                             Style="{StaticResource StyleInputPassword}" />-->
+                       Width="150"
+                       Style="{StaticResource MaterialDesignLabel}" />
+                <PasswordBox x:Name="InputPassword"
+                             Width="300"
+                             Style="{StaticResource MaterialDesignPasswordBox}" />
             </StackPanel>
 
-            <DockPanel Style="{StaticResource StyleDockPanel}">
+            <DockPanel LastChildFill="False">
                 <Button x:Name="ButtonClear"
                         DockPanel.Dock="Left"
-                        Content="Очистить">
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Button}"
-                               BasedOn="{StaticResource StyleButtonClear}">
-                            <Style.Triggers>
-                                <MultiDataTrigger>
-                                    <MultiDataTrigger.Conditions>
-                                        <Condition Binding="{Binding ElementName=InputPassword, Path=Text}" Value="" />
-                                        <Condition Binding="{Binding ElementName=InputLogin, Path=Text}" Value="" />
-                                    </MultiDataTrigger.Conditions>
-                                    <MultiDataTrigger.Setters>
-                                        <Setter Property="IsEnabled" Value="False" />
-                                    </MultiDataTrigger.Setters>
-                                </MultiDataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Resources>
-                </Button>
+                        Content="Очистить"
+                        Style="{StaticResource MaterialDesignFlatButton}"/>
 
                 <Button x:Name="ButtonLogin"
                         DockPanel.Dock="Right"
-                        Content="Войти">
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Button}"
-                               BasedOn="{StaticResource StyleButtonLogin}">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding ElementName=InputLogin, Path=Text}" Value="">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding ElementName=InputPassword, Path=Text}" Value="">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Resources>
-                </Button>
+                        Content="Войти"
+                        Style="{StaticResource MaterialDesignFlatButton}"/>
             </DockPanel>
         </StackPanel>
     </StackPanel>

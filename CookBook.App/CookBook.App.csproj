@@ -5,10 +5,17 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    
+    <IncludeMaterialDesignFont>True</IncludeMaterialDesignFont>
+    <MaterialDesignFontDirectory>Resources\Roboto\</MaterialDesignFontDirectory>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Icons\Apple.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
   </ItemGroup>
 
 </Project>
