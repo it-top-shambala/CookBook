@@ -17,10 +17,10 @@
 
     <StackPanel>
         <TextBlock x:Name="Title"
-               Text="Авторизация"
-               HorizontalAlignment="Center"
-               Margin="5 10"
-               Style="{StaticResource MaterialDesignHeadline3TextBlock}" />
+                   Text="Авторизация"
+                   HorizontalAlignment="Center"
+                   Margin="5 10"
+                   Style="{StaticResource MaterialDesignHeadline3TextBlock}" />
 
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal"
@@ -51,13 +51,13 @@
                         DockPanel.Dock="Left"
                         Content="Очистить"
                         Style="{StaticResource MaterialDesignRaisedButton}"
-                        Click="ButtonClear_OnClick"/>
+                        Click="ButtonClear_OnClick" />
 
                 <Button x:Name="ButtonLogin"
                         DockPanel.Dock="Right"
                         Content="Войти"
                         Style="{StaticResource MaterialDesignRaisedButton}"
-                        Click="ButtonLogin_OnClick"/>
+                        Click="ButtonLogin_OnClick" />
             </DockPanel>
         </StackPanel>
     </StackPanel>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace CookBook.App.Models;
@@ -7,6 +6,7 @@ namespace CookBook.App.Models;
 public class Recipe : BaseModel
 {
     private string _name;
+
     public string Name
     {
         get => _name;
@@ -16,6 +16,7 @@ public class Recipe : BaseModel
     public ObservableCollection<Ingredient> Ingredients { get; set; }
 
     private string _description;
+
     public string Description
     {
         get => _description;
@@ -23,6 +24,7 @@ public class Recipe : BaseModel
     }
 
     private Uri _image;
+
     public Uri Image
     {
         get => _image;

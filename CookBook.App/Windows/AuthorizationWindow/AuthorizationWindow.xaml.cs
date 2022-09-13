@@ -24,7 +24,7 @@ public partial class AuthorizationWindow : Window
         {
             MessageBox.Show("Вы успешно авторизовались!");
             new MainWindow.MainWindow().Show();
-            this.Close();
+            Close();
         }
         else
         {

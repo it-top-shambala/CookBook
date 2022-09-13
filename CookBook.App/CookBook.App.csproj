@@ -4,13 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    
+
     <IncludeMaterialDesignFont>True</IncludeMaterialDesignFont>
     <MaterialDesignFontDirectory>Resources\Roboto\</MaterialDesignFontDirectory>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.5.0"/>
   </ItemGroup>
 
 </Project>

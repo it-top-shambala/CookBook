@@ -3,6 +3,7 @@
 public class Ingredient : BaseModel
 {
     private string _name;
+
     public string Name
     {
         get => _name;
@@ -10,6 +11,7 @@ public class Ingredient : BaseModel
     }
 
     private string _measure;
+
     public string Measure
     {
         get => _measure;
@@ -17,6 +19,7 @@ public class Ingredient : BaseModel
     }
 
     private double _amount;
+
     public double Amount
     {
         get => _amount;
