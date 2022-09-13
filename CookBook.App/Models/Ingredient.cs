@@ -1,8 +1,25 @@
 ﻿namespace CookBook.App.Models;
 
-public class Ingredient
+public class Ingredient : BaseModel
 {
-    public string Name { get; set; }
-    public string Measure { get; set; }
-    public double Amount { get; set; }
+    private string _name;
+    public string Name
+    {
+        get => _name;
+        set => SetField(ref _name, value);
+    }
+
+    private string _measure;
+    public string Measure
+    {
+        get => _measure;
+        set => SetField(ref _measure, value);
+    }
+
+    private double _amount;
+    public double Amount
+    {
+        get => _amount;
+        set => SetField(ref _amount, value);
+    }
 }
