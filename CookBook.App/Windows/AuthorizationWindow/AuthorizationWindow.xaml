@@ -10,16 +10,21 @@
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
         Background="{DynamicResource MaterialDesignPaper}"
-        Title="AuthorizationWindow" Height="350" Width="500">
+        Title="AuthorizationWindow"
+        Height="250" Width="500"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
 
     <StackPanel>
         <TextBlock x:Name="Title"
                Text="Авторизация"
                HorizontalAlignment="Center"
+               Margin="5 10"
                Style="{StaticResource MaterialDesignHeadline3TextBlock}" />
 
         <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal"
+                        Margin="5 5">
                 <Label x:Name="LabelLogin"
                        Content="Имя пользователя"
                        Width="150"
@@ -29,7 +34,8 @@
                          Style="{StaticResource MaterialDesignTextBox}" />
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal"
+                        Margin="5 5">
                 <Label x:Name="LabelPassword"
                        Content="Пароль"
                        Width="150"
@@ -39,16 +45,17 @@
                              Style="{StaticResource MaterialDesignPasswordBox}" />
             </StackPanel>
 
-            <DockPanel LastChildFill="False">
+            <DockPanel LastChildFill="False"
+                       Margin="5 5">
                 <Button x:Name="ButtonClear"
                         DockPanel.Dock="Left"
                         Content="Очистить"
-                        Style="{StaticResource MaterialDesignFlatButton}"/>
+                        Style="{StaticResource MaterialDesignRaisedButton}"/>
 
                 <Button x:Name="ButtonLogin"
                         DockPanel.Dock="Right"
                         Content="Войти"
-                        Style="{StaticResource MaterialDesignFlatButton}"/>
+                        Style="{StaticResource MaterialDesignRaisedButton}"/>
             </DockPanel>
         </StackPanel>
     </StackPanel>
