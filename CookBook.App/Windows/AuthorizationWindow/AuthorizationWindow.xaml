@@ -50,12 +50,14 @@
                 <Button x:Name="ButtonClear"
                         DockPanel.Dock="Left"
                         Content="Очистить"
-                        Style="{StaticResource MaterialDesignRaisedButton}"/>
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Click="ButtonClear_OnClick"/>
 
                 <Button x:Name="ButtonLogin"
                         DockPanel.Dock="Right"
                         Content="Войти"
-                        Style="{StaticResource MaterialDesignRaisedButton}"/>
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Click="ButtonLogin_OnClick"/>
             </DockPanel>
         </StackPanel>
     </StackPanel>
