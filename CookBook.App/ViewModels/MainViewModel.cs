@@ -8,7 +8,6 @@ public class MainViewModel : BaseViewModel
     public ObservableCollection<Recipe> Recipes { get; set; }
 
     private Recipe _recipe;
-
     public Recipe Recipe
     {
         get => _recipe;

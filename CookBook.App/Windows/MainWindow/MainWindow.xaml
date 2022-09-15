@@ -35,6 +35,49 @@
             </ListView.View>
         </ListView>
 
-        <StackPanel Grid.Column="1" />
+        <StackPanel Grid.Column="1"
+                    DataContext="{Binding Recipe}">
+            <StackPanel Orientation="Horizontal"
+                        Margin="5 5">
+                <Label Content="Название"
+                       Width="150"/>
+                <TextBlock Text="{Binding Name}"
+                           Width="350"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="5 5">
+                <Label Content="Ингредиенты"
+                       Width="150"/>
+                <ListView ItemsSource="{Binding Ingredients}"
+                          Width="350">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Name}"
+                                            Header="Название"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Amount}"
+                                            Header="Кол-во"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Measure}"
+                                            Header="Ед. измерения"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="5 5">
+                <Label Content="Описание рецепта"
+                       Width="150"/>
+                <TextBlock Text="{Binding Description}"
+                           Width="350"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="5 5">
+                <Image Source="{Binding Image}"
+                       HorizontalAlignment="Center"
+                       Width="350"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
