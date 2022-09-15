@@ -1,0 +1,19 @@
+﻿[
+  {
+    "name": "Картошка в шкурках",
+    "ingredients": [
+      {
+        "name": "картофель",
+        "measure": "шт.",
+        "amount": 5.0
+      },
+      {
+        "name": "картофель",
+        "measure": "шт.",
+        "amount": 5.0
+      }
+    ],
+    "description": "Варите картошку до готовности",
+    "image": "Assets\\potatoes.jpeg"
+  }
+]

@@ -1,9 +1,12 @@
-﻿namespace CookBook.App.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace CookBook.App.Models;
 
 public class Ingredient : BaseModel
 {
     private string _name;
 
+    [JsonPropertyName("name")]
     public string Name
     {
         get => _name;
@@ -12,6 +15,7 @@ public class Ingredient : BaseModel
 
     private string _measure;
 
+    [JsonPropertyName("measure")]
     public string Measure
     {
         get => _measure;
@@ -20,6 +24,7 @@ public class Ingredient : BaseModel
 
     private double _amount;
 
+    [JsonPropertyName("amount")]
     public double Amount
     {
         get => _amount;

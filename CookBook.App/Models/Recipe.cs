@@ -1,5 +1,6 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using System.IO;
+using System.Text.Json.Serialization;
 
 namespace CookBook.App.Models;
 
@@ -7,27 +8,31 @@ public class Recipe : BaseModel
 {
     private string _name;
 
+    [JsonPropertyName("name")]
     public string Name
     {
         get => _name;
         set => SetField(ref _name, value);
     }
 
+    [JsonPropertyName("ingredients")]
     public ObservableCollection<Ingredient> Ingredients { get; set; }
 
     private string _description;
 
+    [JsonPropertyName("description")]
     public string Description
     {
         get => _description;
         set => SetField(ref _description, value);
     }
 
-    private Uri _image;
+    private string _image;
 
-    public Uri Image
+    [JsonPropertyName("image")]
+    public string Image
     {
-        get => _image;
+        get => $"{Directory.GetCurrentDirectory()}\\{_image}";
         set => SetField(ref _image, value);
     }
 }
