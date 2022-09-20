@@ -41,22 +41,22 @@
 
             <component:OutputComponent x:Name="InputTitle"
                                        LabelName="Название"
-                                       LabelValue="{Binding Name}"/>
+                                       LabelValue="{Binding Name}" />
 
             <StackPanel Orientation="Horizontal"
                         Margin="5 5">
                 <Label Content="Ингредиенты"
-                       Width="150"/>
+                       Width="150" />
                 <ListView ItemsSource="{Binding Ingredients}"
                           Width="350">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn DisplayMemberBinding="{Binding Name}"
-                                            Header="Название"/>
+                                            Header="Название" />
                             <GridViewColumn DisplayMemberBinding="{Binding Amount}"
-                                            Header="Кол-во"/>
+                                            Header="Кол-во" />
                             <GridViewColumn DisplayMemberBinding="{Binding Measure}"
-                                            Header="Ед. измерения"/>
+                                            Header="Ед. измерения" />
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -64,13 +64,13 @@
 
             <component:OutputComponent x:Name="Description"
                                        LabelName="Описание рецепта"
-                                       LabelValue="{Binding Description}"/>
+                                       LabelValue="{Binding Description}" />
 
             <StackPanel Orientation="Horizontal"
                         Margin="5 5">
                 <Image Source="{Binding Image}"
                        HorizontalAlignment="Center"
-                       Width="350"/>
+                       Width="350" />
             </StackPanel>
         </StackPanel>
     </Grid>

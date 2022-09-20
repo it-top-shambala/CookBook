@@ -15,8 +15,7 @@ public class Recipe : BaseModel
         set => SetField(ref _name, value);
     }
 
-    [JsonPropertyName("ingredients")]
-    public ObservableCollection<Ingredient> Ingredients { get; set; }
+    [JsonPropertyName("ingredients")] public ObservableCollection<Ingredient> Ingredients { get; set; }
 
     private string _description;
 

@@ -18,13 +18,14 @@ public partial class OutputComponent : UserControl
     }
 
 
-    public readonly DependencyProperty LabelNameProperty;
-    public readonly DependencyProperty LabelValueProperty;
+    public static readonly DependencyProperty LabelNameProperty =
+        DependencyProperty.Register(nameof(LabelName), typeof(string), typeof(OutputComponent));
+
+    public static readonly DependencyProperty LabelValueProperty =
+        DependencyProperty.Register(nameof(LabelValue), typeof(string), typeof(OutputComponent));
+
     public OutputComponent()
     {
-        LabelNameProperty = DependencyProperty.Register(nameof(LabelName), typeof(string), typeof(OutputComponent));
-        LabelValueProperty = DependencyProperty.Register(nameof(LabelValue), typeof(string), typeof(OutputComponent));
         InitializeComponent();
     }
 }
-
