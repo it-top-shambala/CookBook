@@ -17,7 +17,6 @@ public partial class OutputComponent : UserControl
         set => SetValue(LabelValueProperty, value);
     }
 
-
     public static readonly DependencyProperty LabelNameProperty =
         DependencyProperty.Register(nameof(LabelName), typeof(string), typeof(OutputComponent));
 
