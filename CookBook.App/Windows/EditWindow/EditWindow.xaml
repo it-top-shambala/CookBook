@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:viewModel="clr-namespace:CookBook.App.ViewModels"
+        xmlns:component="clr-namespace:CookBook.App.Components.InputComponent"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Medium"
@@ -35,37 +36,33 @@
             </ListView.View>
         </ListView>
 
-        <StackPanel Grid.Column="1"
-                    DataContext="{Binding Recipe}">
-            <StackPanel Orientation="Horizontal"
-                        Margin="5 5">
-                <Label Content="Название"
-                       Width="150" />
-                <TextBox Text="{Binding Name}"
-                         Width="350" />
+        <StackPanel Grid.Column="1">
+            <StackPanel DataContext="{Binding Recipe}">
+                <component:InputComponent LabelName="Название"
+                                          LabelValue="{Binding Name}"/>
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="5 5">
+                    <Label Content="Ингредиенты"
+                           Width="150" />
+                    <!-- TODO Редактирование ингридиентов -->
+                </StackPanel>
+
+                <component:InputComponent LabelName="Описание"
+                                          LabelValue="{Binding Description}"/>
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="5 5">
+                    <Image Source="{Binding Image}"
+                           HorizontalAlignment="Center"
+                           Width="350" />
+                    <Button Content="Новая фотография" />
+                </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal"
-                        Margin="5 5">
-                <Label Content="Ингредиенты"
-                       Width="150" />
-                <!-- TODO Редактирование ингридиентов -->
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal"
-                        Margin="5 5">
-                <Label Content="Описание рецепта"
-                       Width="150" />
-                <TextBox Text="{Binding Description}"
-                         Width="350" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal"
-                        Margin="5 5">
-                <Image Source="{Binding Image}"
-                       HorizontalAlignment="Center"
-                       Width="350" />
-                <Button Content="Новая фотография" />
+            <StackPanel>
+                <Button Content="Show"
+                        Command="{Binding ShowRecipeCommand}"/>
             </StackPanel>
         </StackPanel>
     </Grid>
