@@ -31,7 +31,13 @@ public class Recipe : BaseModel
     [JsonPropertyName("image")]
     public string Image
     {
-        get => $"{Directory.GetCurrentDirectory()}\\{_image}";
+        get => _image;
         set => SetField(ref _image, value);
+    }
+
+    [JsonIgnore]
+    public string ImageS
+    {
+        get => $"{Directory.GetCurrentDirectory()}\\{_image}";
     }
 }

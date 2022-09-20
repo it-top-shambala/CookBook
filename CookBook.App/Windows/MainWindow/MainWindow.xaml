@@ -68,7 +68,7 @@
 
             <StackPanel Orientation="Horizontal"
                         Margin="5 5">
-                <Image Source="{Binding Image}"
+                <Image Source="{Binding ImageS}"
                        HorizontalAlignment="Center"
                        Width="350" />
             </StackPanel>
