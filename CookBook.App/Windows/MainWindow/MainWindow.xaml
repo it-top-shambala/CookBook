@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:viewModel="clr-namespace:CookBook.App.ViewModels"
+        xmlns:component="clr-namespace:CookBook.App.Components.OutputComponent"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Medium"
@@ -37,13 +38,10 @@
 
         <StackPanel Grid.Column="1"
                     DataContext="{Binding Recipe}">
-            <StackPanel Orientation="Horizontal"
-                        Margin="5 5">
-                <Label Content="Название"
-                       Width="150"/>
-                <TextBlock Text="{Binding Name}"
-                           Width="350"/>
-            </StackPanel>
+
+            <component:OutputComponent x:Name="InputTitle"
+                                       LabelName="Название"
+                                       LabelValue="{Binding Name}"/>
 
             <StackPanel Orientation="Horizontal"
                         Margin="5 5">
@@ -64,13 +62,9 @@
                 </ListView>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal"
-                        Margin="5 5">
-                <Label Content="Описание рецепта"
-                       Width="150"/>
-                <TextBlock Text="{Binding Description}"
-                           Width="350"/>
-            </StackPanel>
+            <component:OutputComponent x:Name="Description"
+                                       LabelName="Описание рецепта"
+                                       LabelValue="{Binding Description}"/>
 
             <StackPanel Orientation="Horizontal"
                         Margin="5 5">
